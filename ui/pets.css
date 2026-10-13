@@ -77,3 +77,15 @@ body {
     flex-direction: column;
   }
 }
+
+.pets-settings.mu-settings-codex .pets-import { padding: 0; gap: 0; }
+.pets-settings.mu-settings-codex .pets-import .mu-field { width: 100%; }
+.pets-settings.mu-settings-codex .pets-library h2 { font-size: 16px; font-weight: 500; }
+.pets-settings.mu-settings-codex .pets-library ul { border: 1px solid var(--mu-line); border-radius: 16px; overflow: hidden; }
+.pets-settings.mu-settings-codex .pets-library li { padding: 14px 16px; }
+.pets-settings.mu-settings-codex .pets-library li:last-child { border-bottom: 0; }
+.pets-settings.mu-settings-codex .pets-details h3 { font-weight: 500; }
+.pets-settings.mu-settings-codex .pets-empty { padding: 16px; border: 1px solid var(--mu-line); border-radius: 16px; margin-top: 14px; }
+
+.pets-settings.mu-settings-codex .pets-import > .pets-actions { padding: 10px 16px; justify-content: flex-end; border-top: 1px solid var(--mu-line); }
+.pets-settings.mu-settings-codex .pets-library ul:empty { display: none; }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button, DialogNotice, Input, UiProvider } from "@modera/ui";
-import { SettingsPage } from "@modera/ui/settings";
+import { SettingsPage, SettingsPanel, FormItem, FieldRow } from "@modera/ui/settings";
 import {
   frontend,
   mountPlugin,
@@ -67,9 +67,9 @@ function PetSettings() {
   };
   return (
     <UiProvider
-      theme="system"
+      theme={snapshot?.theme?.mode ?? "system"}
       locale={zh ? "zh-CN" : "en"}
-      className="pets-settings"
+      className="pets-settings mu-settings-codex"
     >
       <SettingsPage
         title={t("桌面宠物", "Desktop pets")}
@@ -83,43 +83,24 @@ function PetSettings() {
             {error || actionError || data?.error}
           </DialogNotice>
         )}
-        <form
+        <SettingsPanel title={t("导入", "Import")} variant="preferences"><form
           className="pets-import"
           onSubmit={(event) => {
             event.preventDefault();
             if (source.trim() && !busy) void run("import", source.trim());
           }}
         >
-          <Input
-            label={t("宠物资源", "Pet source")}
-            placeholder={t(
-              "粘贴 Codex 安装链接、图片网址或本地文件路径",
-              "Paste a Codex install link, image URL or local file path",
-            )}
-            value={source}
-            onChange={setSource}
-            disabled={busy}
-          />
-          <p>
-            {t(
-              "支持本地宠物清单与精灵图、Codex 安装链接，以及 v1 / v2 精灵图网址。",
-              "Supports local manifests and spritesheets, Codex install links, and v1 / v2 spritesheet URLs.",
-            )}
-          </p>
+          <FormItem variant="inline" className="settings-path-row" label={t("宠物资源", "Pet source")} description={t("支持宠物清单、精灵图、本地路径与 Codex 安装链接。", "Accepts manifests, spritesheets, local paths and Codex install links.")}>
+            <FieldRow><Input label={t("宠物资源", "Pet source")} hideLabel placeholder={t("链接或本地文件路径", "URL or local file path")} value={source} onChange={setSource} disabled={busy} />
+            <Button variant="outline" type="button" disabled={busy} onClick={() => void browse()}>{t("浏览", "Browse")}</Button></FieldRow>
+          </FormItem>
           <div className="pets-actions">
-            <Button
-              variant="outline"
-              type="button"
-              disabled={busy}
-              onClick={() => void browse()}
-            >
-              {t("选择文件", "Choose file")}
-            </Button>
+
             <Button type="submit" disabled={busy || !source.trim()}>
               {busy ? t("处理中…", "Working…") : t("导入宠物", "Import pet")}
             </Button>
           </div>
-        </form>
+        </form></SettingsPanel>
         {!data && !busy && !actionError && (
           <DialogNotice>
             {t("正在连接插件…", "Connecting to plugin…")}
