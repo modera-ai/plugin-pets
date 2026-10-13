@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  background: transparent;
+}
+.pets-settings {
+  min-height: 100vh;
+}
+.pets-import {
+  display: grid;
+  gap: 12px;
+}
+.pets-import p,
+.pets-details p,
+.pets-empty,
+.pets-help {
+  margin: 0;
+  color: var(--mu-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.pets-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.pets-library {
+  margin-top: 28px;
+}
+.pets-library header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.pets-library h2 {
+  font-size: 14px;
+  margin: 0;
+}
+.pets-library ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.pets-library li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--mu-line);
+}
+.pets-details {
+  min-width: 0;
+}
+.pets-details h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.pets-details h3 span {
+  margin-left: 8px;
+  color: var(--mu-muted);
+  font-size: 12px;
+  font-weight: normal;
+}
+.pets-empty {
+  padding: 24px 0;
+}
+.pets-help {
+  margin-top: 16px;
+}
+@media (max-width: 420px) {
+  .pets-library li {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

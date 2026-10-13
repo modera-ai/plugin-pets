@@ -1,0 +1,34 @@
+{
+  "apiVersion": 1,
+  "activationScope": "global",
+  "configScope": "global",
+  "id": "modera.pets",
+  "name": "Desktop Pets",
+  "version": "0.1.0",
+  "description": "Import Codex pet resources and display an interactive desktop companion.",
+  "author": "Modera",
+  "category": "personalization",
+  "icon": "paw-print",
+  "main": "dist/index.cjs",
+  "permissions": [
+    "desktop.windows",
+    "storage.read",
+    "storage.write",
+    "network.fetch",
+    "runs.observe"
+  ],
+  "extensions": ["settings"],
+  "settings": {
+    "title": "Desktop pets",
+    "frontend": "pets",
+    "waitForReady": true,
+    "locales": { "zh-CN": { "title": "桌面宠物" } }
+  },
+  "frontends": { "pets": { "root": "dist/ui", "entry": "index.html" } },
+  "locales": {
+    "zh-CN": {
+      "name": "桌面宠物",
+      "description": "导入 Codex 宠物资源，在桌面显示可拖动、跟随鼠标和响应任务状态的宠物。"
+    }
+  }
+}

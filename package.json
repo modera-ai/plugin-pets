@@ -1,0 +1,31 @@
+{
+  "name": "@modera-plugin/pets",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Desktop companions with Codex-compatible pet resources.",
+  "files": [
+    "plugin.json",
+    "dist"
+  ],
+  "scripts": {
+    "build": "modera-plugin-build .",
+    "pack": "modera-plugin pack .",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@modera/contracts": "file:vendor/modera-contracts-0.1.0.tgz",
+    "@modera/plugin-build": "file:vendor/modera-plugin-build-0.1.0.tgz",
+    "@modera/plugin-sdk": "file:vendor/modera-plugin-sdk-0.1.0.tgz",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@modera/ui": "file:vendor/modera-ui-0.1.0.tgz",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
