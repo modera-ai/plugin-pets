@@ -4,7 +4,7 @@
   "configScope": "global",
   "id": "modera.pets",
   "name": "Desktop Pets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Import Codex pet resources and display an interactive desktop companion.",
   "author": "Modera",
   "category": "personalization",
